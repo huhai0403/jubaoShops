@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商铺保-资料填写</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script>
+        (function(){
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            html.style.fontSize = windowWidth / 7.5 + 'px';
+        })();
+    </script>
+    <link href="css/shops.css" rel="stylesheet" type="text/css">
+    <link href="css/weui.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/weui.min.js"></script>
+    <script src="data/mock.js"></script>
+    <script src="data/data.js"></script>
+</head>
+<body>
+    <div class="top_bar">
+        <span>资料填写</span>
+        <a class="return" href="javascript:;">返回</a>
+    </div>
+    <div class="info_fill" id="info_fill" v-on:click="uploadImg($event)">
+        <div class="switch">
+            <div class="weui-cell switch-top">
+                <div class="weui-cell__bd">
+                    <p>请填写投保信息</p>
+                </div>
+                <div class="weui-cell__ft"><i class="icon"></i></div>
+            </div>
+            <div class="switch-box" >
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label pl30"><b class="red">* </b>投保人:</label></div>
+                    <div class="weui-cell__bd">
+                        <input v-model="insPerson" value="{{insPerson}}" class="weui-input" placeholder="请填写投保人姓名">
+                        <span class="dn">{{insPerson}}</span>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label pl30"><b class="red">* </b>被保险人:</label></div>
+                    <div class="weui-cell__bd">
+                        <input v-model="insedPerson" value="{{insedPerson}}" class="weui-input" placeholder="请确认被保险人与营业执照上一致">
+                        <span class="dn">{{insedPerson}}</span>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label pl30"><b class="red">* </b>操作人电话:</label></div>
+                    <div class="weui-cell__bd">
+                        <input v-model="operaPhone" value="{{operaPhone}}" class="weui-input" placeholder="请填写操作人电话">
+                        <span class="dn">{{operaPhone}}</span>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label pl30"><b class="red">* </b>单位地址:</label></div>
+                    <div class="weui-cell__bd">
+                        <input v-model="comAddress" value="{{comAddress}}" class="weui-input" placeholder="请填写单位详细地址">
+                        <span class="dn">{{comAddress}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="switch fill_box dn">
+            <div class="weui-cell switch-top" v-on:click="switchTo($event)">
+                <div class="weui-cell__bd">
+                    <p>投保商铺档口<b>1</b></p>
+                </div>
+                <div class="weui-cell__ft"><i class="icon"></i></div>
+            </div>
+            <div class="switch-box">
+                <div class="weui-cells__title">1.选择总保险金额：</div>
+                <div class="weui-cells weui-cells_radio">
+                    <label class="weui-cell weui-check__label">
+                        <div class="weui-cell__bd">
+                            <p><span class="c0">方案一:</span></p>
+                            <p><span>保险金额100万</span>&nbsp&nbsp&nbsp<span>保费：<c>1200</c>元</span></p>
+                            <p class="fl main-tip">
+                                <span>(固定资产20万+临时存资80万+租金补偿200元/天*90天)</span>
+                            </p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <input type="radio" class="weui-check" name="radio1" >
+                            <span class="weui-icon-checked"></span>
+                        </div>
+                    </label>
+                    <label class="weui-cell weui-check__label">
+                        <div class="weui-cell__bd">
+                            <p><span class="c0">方案二:</span></p>
+                            <p><span>保险金额200万</span>&nbsp&nbsp&nbsp<span>保费：<c>2200</c>元</span></p>
+                            <p class="fl main-tip">
+                                <span>(固定资产40万+临时存资160万+租金补偿200元/天*90天)</span>
+                            </p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <input type="radio" name="radio1" class="weui-check">
+                            <span class="weui-icon-checked"></span>
+                        </div>
+                    </label>
+                    <label class="weui-cell weui-check__label">
+                        <div class="weui-cell__bd">
+                            <p><span class="c0">方案三:</span></p>
+                            <p><span>保险金额300万</span>&nbsp&nbsp&nbsp<span>保费：<c>3200</c>元</span></p>
+                            <p class="fl main-tip">
+                                <span>(固定资产60万+临时存资240万+租金补偿200元/天*90天)</span>
+                            </p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <input type="radio" name="radio1" class="weui-check">
+                            <span class="weui-icon-checked"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="weui-cells__tips c0" style="font-size: 17px;color: #333">当前商铺应付保费：<span class="price ceb6100">3200</span>元</div>
+                <div class="weui-cells__tips c0">超过300万的投保需求请联系工作人员：<br/>40080-59680。</div>
+                <div class="weui-cells__title">2.商铺详细地址：</div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入商铺详细地址">
+                    </div>
+                </div>
+                <div class="weui-cells__title">3.上传商铺照片：</div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <div class="weui-uploader">
+                            <div class="weui-uploader__hd">
+                                <p class="weui-uploader__title">商铺正面照(至少一张)</p>
+                            </div>
+                            <div class="weui-uploader__bd">
+                                <ul class="weui-uploader__files">
+                                    <li class="weui-uploader__file"></li>
+                                </ul>
+                                <div class="weui-uploader__input-box">
+                                    <input class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <div class="weui-uploader">
+                            <div class="weui-uploader__hd">
+                                <p class="weui-uploader__title">商铺内部照(至少三张)</p>
+                            </div>
+                            <div class="weui-uploader__bd">
+                                <ul class="weui-uploader__files">
+                                    <li class="weui-uploader__file"></li>
+                                </ul>
+                                <div class="weui-uploader__input-box">
+                                    <input class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <div class="weui-uploader">
+                            <div class="weui-uploader__hd">
+                                <p class="weui-uploader__title">消防设施照(至少二张)</p>
+                            </div>
+                            <div class="weui-uploader__bd">
+                                <ul class="weui-uploader__files">
+                                    <li class="weui-uploader__file"></li>
+                                </ul>
+                                <div class="weui-uploader__input-box">
+                                    <input class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:;" class="business-help weui-btn weui-btn_primary">邀请同事协助拍照上传</a>
+            </div>
+
+        </div>
+        <template v-for="(shopItem,index) in shopInfo">
+            <div class="switch fill_box">
+                <div class="weui-cell switch-top" v-on:click="switchTo($event)">
+                    <div class="weui-cell__bd">
+                        <p>投保商铺档口<b>{{index+1}}</b></p>
+                    </div>
+                    <div class="weui-cell__ft"><i class="icon"></i></div>
+                </div>
+                <div class="switch-box">
+                    <div class="weui-cells__title">1.选择总保险金额：</div>
+                    <div class="weui-cells weui-cells_radio">
+                        <label class="weui-cell weui-check__label" v-on:click="checkPro($event)">
+                            <div class="weui-cell__bd">
+                                <p><span class="c0">方案一:</span></p>
+                                <p><span>保险金额100万</span>&nbsp&nbsp&nbsp<span>保费：<c>1200</c>元</span></p>
+                                <p class="fl main-tip">
+                                    <span>(固定资产20万+临时存资80万+租金补偿200元/天*90天)</span>
+                                </p>
+                            </div>
+                            <div class="weui-cell__ft">
+                                <input type="radio" class="weui-check" v-bind:name="index" v-bind:checked="shopItem.type.checked==1" >
+                                <span class="weui-icon-checked"></span>
+                            </div>
+                        </label>
+                        <label class="weui-cell weui-check__label" v-on:click="checkPro($event)">
+                            <div class="weui-cell__bd">
+                                <p><span class="c0">方案二:</span></p>
+                                <p><span>保险金额200万</span>&nbsp&nbsp&nbsp<span>保费：<c>2200</c>元</span></p>
+                                <p class="fl main-tip">
+                                    <span>(固定资产40万+临时存资160万+租金补偿200元/天*90天)</span>
+                                </p>
+                            </div>
+                            <div class="weui-cell__ft">
+                                <input type="radio" class="weui-check" v-bind:name="index" v-bind:checked="shopItem.type.checked==2">
+                                <span class="weui-icon-checked"></span>
+                            </div>
+                        </label>
+                        <label class="weui-cell weui-check__label" v-on:click="checkPro($event)">
+                            <div class="weui-cell__bd">
+                                <p><span class="c0">方案三:</span></p>
+                                <p><span>保险金额300万</span>&nbsp&nbsp&nbsp<span>保费：<c>3200</c>元</span></p>
+                                <p class="fl main-tip">
+                                    <span>(固定资产60万+临时存资240万+租金补偿200元/天*90天)</span>
+                                </p>
+                            </div>
+                            <div class="weui-cell__ft">
+                                <input type="radio" class="weui-check" v-bind:name="index" checked="checked" v-bind:checked="shopItem.type.checked==3">
+                                <span class="weui-icon-checked"></span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="weui-cells__tips c0" style="font-size: 17px;color: #333">当前商铺应付保费：<span class="price ceb6100">3200</span>元</div>
+                    <div class="weui-cells__tips c0">超过300万的投保需求请联系工作人员：<br/>40080-59680。</div>
+                    <div class="weui-cells__title">2.商铺详细地址：</div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="text" placeholder="请输入商铺详细地址">
+                        </div>
+                    </div>
+                    <div class="weui-cells__title">3.上传商铺照片：</div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <div class="weui-uploader">
+                                <div class="weui-uploader__hd">
+                                    <p class="weui-uploader__title">商铺正面照(至少一张)</p>
+                                </div>
+                                <div class="weui-uploader__bd">
+                                    <ul class="weui-uploader__files">
+                                        <li class="weui-uploader__file" v-bind:style="'background-image:url('+shopItem.pic01+')'" ></li>
+                                    </ul>
+                                    <div class="weui-uploader__input-box">
+                                        <input class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <div class="weui-uploader">
+                                <div class="weui-uploader__hd">
+                                    <p class="weui-uploader__title">商铺内部照(至少三张)</p>
+                                </div>
+                                <div class="weui-uploader__bd">
+                                    <ul class="weui-uploader__files">
+                                        <li class="weui-uploader__file" v-bind:style="'background-image:url('+shopItem.pic02+')'" ></li>
+                                    </ul>
+                                    <div class="weui-uploader__input-box">
+                                        <input class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <div class="weui-uploader">
+                                <div class="weui-uploader__hd">
+                                    <p class="weui-uploader__title">消防设施照(至少二张)</p>
+                                </div>
+                                <div class="weui-uploader__bd">
+                                    <ul class="weui-uploader__files">
+                                        <li class="weui-uploader__file" v-bind:style="'background-image:url('+shopItem.pic03+')'" ></li>
+                                    </ul>
+                                    <div class="weui-uploader__input-box">
+                                        <input class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="business-help weui-btn weui-btn_primary">邀请同事协助拍照上传</a>
+                </div>
+            </div>
+        </template>
+
+        <div class="weui-cells add_fill">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p style="font-size: 0.3rem">点击增加投保物流档口</p>
+                </div>
+                <div class="weui-cell__ft"><img class="add_sp" src="img/add_icon.png"/></div>
+            </div>
+        </div>
+        <div class="switch">
+            <div class="weui-cell switch-top">
+                <div class="weui-cell__bd">
+                    <p>请上传营业执照照片</p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </div>
+            <div class="switch-box">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <div class="weui-uploader pl30">
+                            <div class="weui-uploader__hd">
+                            </div>
+                            <div class="weui-uploader__bd">
+                                <ul class="weui-uploader__files">
+                                    <li class="weui-uploader__file" v-bind:style="'background-image:url('+companyPic+')'"></li>
+                                </ul>
+                                <div class="weui-uploader__input-box">
+                                    <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:;" class="business-help weui-btn weui-btn_primary">邀请同事协助拍照上传</a>
+            </div>
+        </div>
+        <div class=" weui-cells_checkbox">
+            <label class="weui-cell weui-check__label" for="s11">
+                <div class="weui-cell__hd">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="s11" >
+                    <i class="weui-icon-checked"></i>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>阅读并同意<a href="javascript:;">《保险条款》</a>和<a href="javascript:;">《保险须知》</a></p>
+                </div>
+            </label>
+        </div>
+        <div>
+            <div class="weui-flex btn_box01">
+                <div class="weui-flex__item"><a href="javascript:;" class="weui-btn sp_btn01 w90 weui-btn_plain-default">资料不全暂时保存</a></div>
+                <div class="weui-flex__item"><a href="javascript:;" @click="postInfo" class="weui-btn sp_btn02 w90 weui-btn_plain-default">填写完毕下一步</a></div>
+            </div>
+        </div>
+        <!--分享-->
+        <div class="weui-mask dn"></div>
+        <div class="weui-dialog save_succ dn">
+            <div class="weui-dialog__bd">
+                <i class="weui-icon-success weui-icon_msg"></i><br/>保存成功
+            </div>
+            <div class="weui-dialog__ft">
+                <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">知道了</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function(){
+        //收起
+        $('.switch-top').on('click',function(){
+            $(this).find('.icon').toggleClass('on');
+            $(this).siblings('.switch-box').toggle();
+            //console.log(this)
+        });
+        //选择方案
+        $('.weui-check__label').click(function(){
+            $(this).parents('.fill_box').find('.price').html($(this).find('c').html())
+        });
+        //增加档口
+        var radioI = $('.fill_box').length;
+        $('.add_sp').click(function(){
+            radioI++;
+            $('.fill_box').eq(radioI-1).after($('.fill_box').eq(0).clone(true));
+            $('.fill_box').eq(radioI).removeClass('dn');
+            $('.fill_box').eq(radioI).find('.weui-check').attr('name',radioI);
+            $('.fill_box').eq(radioI).find('b').html(radioI);
+            $('.fill_box').eq(radioI).find('.weui-check').eq(2).attr('checked','checked');
+            console.log(radioI)
+        });
+        //保存
+        $('.sp_btn01 ').click(function(){
+            $('.save_succ,.weui-mask').show();
+        });
+        $('.save_succ .weui-dialog__btn_primary').click(function(){
+            $('.save_succ,.weui-mask').hide();
+        });
+
+    });
+</script>
+<script>
+    var reg_phone = /^(0|86|17951)?(13[0-9]|15[012356789]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/;
+    var vm = new Vue({
+        el:'#info_fill',
+        data: {
+            insPerson:"",
+            insedPerson:"",
+            operaPhone:"",
+            comAddress:"",
+            shopInfo:[],
+            companyPic:""
+        },
+        methods:{
+            //初始化加载
+            getIniInfo:function(){
+                $.ajax({
+                    url:'api/policinfo.json',
+                    dataType:'json',
+                    success:function(data){
+                        vm.insPerson = data.insPerson.array;
+                        vm.insedPerson = data.insedPerson.array;
+                        vm.operaPhone = data.operaPhone.regexp;
+                        vm.comAddress = data.comAddress;
+                        vm.shopInfo = data.shopInfo;
+                        vm.companyPic = data.companyPic;
+                        console.log(data.shopInfo);
+                    }
+                })
+            },
+            //提交信息
+            postInfo:function(){
+                if(vm.insPerson.length==0){
+                    alert('请输入投保人姓名！');
+                }else if(vm.insedPerson.length==0){
+                    alert('请输入被保险人姓名！');
+                }else if(vm.operaPhone.length==0){
+                    alert('请输入手机号！')
+                }else if(!reg_phone.test(vm.operaPhone)){
+                    alert('请输入正确手机号！')
+                }else if(vm.comAddress.length==0){
+                    alert('请输入单位地址')
+                }
+            },
+            //收起
+            switchTo:function(e){
+                var v = e.currentTarget;//获取点击对象的dom结构
+                var $v = $(v);//将dom对象转换为jquery对象
+                $v.find('.icon').toggleClass('on');
+                $v.siblings('.switch-box').toggle();
+            },
+            //选择方案
+            checkPro:function(e){
+                var v = e.currentTarget;
+                var $v = $(v);
+                $v.parents('.fill_box').find('.price').html($v.find('c').html());
+            },
+            //上传,查看图片
+            uploadImg:function(e){
+                var e = e || window.event;//事件委托
+                var target = e.target || e.srcElement;//兼容chrome,ie
+                var $v = $(target).parents('.weui-cell');
+                var uploadCount = 0;
+                if(target.className == 'weui-uploader__input'){
+                    weui.uploader($v, {
+                        url: 'api/uploadPic.json',
+                        auto: true,
+                        type: 'file',
+                        fileVal: 'fileVal',
+                        compress: {
+                            width: 1600,
+                            height: 1600,
+                            quality: .8
+                        },
+                        onBeforeQueued: function(files) {
+                            // `this` 是轮询到的文件, `files` 是所有文件
+                            if(["image/jpg", "image/jpeg", "image/png", "image/gif"].indexOf(this.type) < 0){
+                                weui.alert('请上传图片');
+                                return false; // 阻止文件添加
+                            }
+                            if(this.size > 10 * 1024 * 1024){
+                                weui.alert('请上传不超过10M的图片');
+                                return false;
+                            }
+                            if (files.length > 1 ) { // 防止一下子选择过多文件
+                                weui.alert('最多只能上传5张图片，请重新选择');
+                                return false;
+                            }
+                            if (uploadCount + 1 > 5) {
+                                weui.alert('最多只能上传5张图片');
+                                return false;
+                            }
+                            ++uploadCount;
+                            // return true; // 阻止默认行为，不插入预览图的框架
+                        },
+                        onQueued: function(){
+                            console.log(this);
+                        },
+                    });
+                }else if(target.className == 'weui-uploader__file'){
+                    var url = target.style.backgroundImage;
+                    url = url.slice(5,url.length-2);
+                    console.log(url)
+                    var gallery = weui.gallery(url, {
+                        className: 'file',
+                        onDelete: function(){
+                            if(confirm('确定删除该图片？')){
+                                console.log('删除');
+                            }
+                            gallery.hide(function() {
+                                console.log('`gallery` has been hidden');
+                            });
+                        }
+                    });
+                }
+            },
+        }
+    });
+    vm.getIniInfo();
+
+</script>
+</html>

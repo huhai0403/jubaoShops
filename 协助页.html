@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商铺保-请求协同</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script>
+        (function(){
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            html.style.fontSize = windowWidth / 7.5 + 'px';
+        })();
+    </script>
+    <link href="css/shops.css" rel="stylesheet" type="text/css">
+    <link href="css/weui.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="top_bar">
+        <span>填写协同信息</span>
+        <a class="return" href="javascript:;">返回</a>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <p>被保险人:</p>
+        </div>
+        <div class="weui-cell__ft tover" style="width: 5.3rem">武汉市双视角保险理赔咨询有限公司</div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <p>档口地址:</p>
+        </div>
+        <div class="weui-cell__ft tover" style="width: 5.3rem">武汉市东西湖区七雄路海峡创业城二期二栋906</div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">操作人电话:</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" placeholder="请填写操作人电话">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <p>需要的照片:</p>
+        </div>
+    </div>
+    <div class="weui-cells_checkbox">
+        <label class="weui-cell weui-check__label">
+            <div class="weui-cell__hd">
+                <input type="checkbox" class="weui-check" name="checkbox1">
+                <i class="weui-icon-checked"></i>
+            </div>
+            <div class="weui-cell__bd">
+                <p>商铺档口正面照(至少一张)</p>
+            </div>
+        </label>
+        <label class="weui-cell weui-check__label">
+            <div class="weui-cell__hd">
+                <input type="checkbox" name="checkbox1" class="weui-check">
+                <i class="weui-icon-checked"></i>
+            </div>
+            <div class="weui-cell__bd">
+                <p>商铺档口内部照(至少三张)</p>
+            </div>
+        </label>
+        <label class="weui-cell weui-check__label">
+            <div class="weui-cell__hd">
+                <input type="checkbox" name="checkbox1" class="weui-check">
+                <i class="weui-icon-checked"></i>
+            </div>
+            <div class="weui-cell__bd">
+                <p>消防设施照(至少两张)</p>
+            </div>
+        </label>
+    </div>
+    <div class=" send_help_btn">
+        <a href="javascript:;" class="weui-btn weui-btn_primary">邀请协同</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商铺保-已生效保单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script>
+        (function(){
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            html.style.fontSize = windowWidth / 7.5 + 'px';
+        })();
+    </script>
+    <link href="css/shops.css" rel="stylesheet" type="text/css">
+    <link href="css/weui.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div class="top_bar">
+    <span>已生效保单</span>
+    <a class="return" href="javascript:;">返回</a>
+</div>
+<div class="switch">
+    <div class="weui-cell switch-top">
+        <div class="weui-cell__bd">
+            <p>保单1:<span>保单号21558966</span></p>
+        </div>
+        <div class="weui-cell__ft"><a class="link_btn" href="javascript:;">查看</a> </div>
+    </div>
+    <div class="switch-box dn">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <p>被保险人:</p>
+            </div>
+            <div class="weui-cell__ft tover" style="width: 5.2rem">武汉市双视角保险理赔咨询有限公司</div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <p>档口地址：</p>
+            </div>
+            <div class="info_bar weui-cell__ft ">
+                <p class=" tover" style="width: 5.2rem">湖北省武汉市东西湖区五环大道XXX物流中心xx栋0015号</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="switch">
+    <div class="weui-cell switch-top">
+        <div class="weui-cell__bd">
+            <p>保单2:<span>保单号21558966</span></p>
+        </div>
+        <div class="weui-cell__ft"><a class="link_btn" href="javascript:;">查看</a> </div>
+    </div>
+    <div class="switch-box dn">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <p>被保险人:</p>
+            </div>
+            <div class="weui-cell__ft tover" style="width: 5.2rem">武汉市双视角保险理赔咨询有限公司</div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <p>档口地址：</p>
+            </div>
+            <div class="info_bar weui-cell__ft ">
+                <p class=" tover" style="width: 5.2rem">湖北省武汉市东西湖区五环大道XXX物流中心xx栋0015号</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $(function(){
+        //收起
+        $('.switch-top').click(function(){
+            $(this).siblings('.switch-box').toggle();
+        });
+    })
+</script>
+</html>

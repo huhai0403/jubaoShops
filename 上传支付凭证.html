@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商铺保-上传支付凭证</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script>
+        (function(){
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            html.style.fontSize = windowWidth / 7.5 + 'px';
+        })();
+    </script>
+    <link href="css/shops.css" rel="stylesheet" type="text/css">
+    <link href="css/weui.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div class="top_bar">
+    <span>上传支付凭证</span>
+    <a class="return" href="javascript:;">返回</a>
+</div>
+<div class="weui-cell">
+    <div class="weui-cell__bd">
+        <p>投保人:</p>
+    </div>
+    <div class="weui-cell__ft tover" style="width: 5.3rem">武汉市双视角保险理赔咨询有限公司</div>
+</div>
+<div class="weui-cell">
+    <div class="weui-cell__bd">
+        <p>被保险人:</p>
+    </div>
+    <div class="weui-cell__ft tover" style="width: 5.3rem">武汉市双视角保险理赔咨询有限公司</div>
+</div>
+<div class="weui-cell">
+    <div class="weui-cell__hd"><label class="weui-label">保单寄送地址:</label></div>
+    <div class="weui-cell__ft tover" style="width: 5.3rem">武汉市东西湖区七雄路海峡创业城二期二栋906</div>
+</div>
+<div class="switch">
+    <div class="weui-cell switch-top">
+        <div class="weui-cell__bd">
+            <p>支付凭证上传</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+    </div>
+    <div class="switch-box">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <div class="weui-uploader pl30">
+                    <div class="weui-uploader__hd">
+                    </div>
+                    <div class="weui-uploader__bd">
+                        <ul class="weui-uploader__files" id="uploaderFiles">
+                            <li class="weui-uploader__file" style="background-image:url(./img/pic_160.png)"></li>
+                        </ul>
+                        <div class="weui-uploader__input-box">
+                            <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui-cells__tips" style="color: #ff0000">
+    提示<br/>
+    1.保险公司保险费收取账户为：3202001629200167342<br/>
+    2.请上传清晰的支付凭证照片
+</div>
+<div class=" send_help_btn">
+    <a href="javascript:;" class="weui-btn weui-btn_primary">上传完毕</a>
+</div>
+<!--弹框-->
+<div class="weui-mask dn"></div>
+<div class="weui-dialog dn" >
+    <div class="weui-dialog__bd" style="padding: 1em 15px">
+        <i style="font-size: 65px;" class="weui-icon-success weui-icon_msg"></i>
+        <p style="font-size: 0.35rem; line-height: 0.6rem">操作成功</p>
+        <p style="font-size: 0.24rem; line-height: 0.4rem;">保险公司将立即审核贵公司的投保资料。</p>
+        <p style="font-size: 0.24rem; line-height: 0.4rem;">保单出具完毕后我们将及时通知您。</p>
+    </div>
+    <div class="weui-dialog__ft">
+        <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">知道了</a>
+    </div>
+</div>
+</body>
+<script>
+    $(function(){
+        $('.send_help_btn .weui-btn_primary').click(function(){
+            $('.weui-dialog,.weui-mask').show();
+        });
+        $('.weui-dialog__btn_primary').click(function(){
+            $('.weui-dialog,.weui-mask').hide();
+        });
+    })
+</script>
+</html>

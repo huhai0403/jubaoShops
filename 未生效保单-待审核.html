@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商铺保-未生效保单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script>
+        (function(){
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            html.style.fontSize = windowWidth / 7.5 + 'px';
+        })();
+    </script>
+    <link href="css/shops.css" rel="stylesheet" type="text/css">
+    <link href="css/weui.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div class="top_bar">
+    <span>未生效保单</span>
+    <a class="return" href="javascript:;">返回</a>
+</div>
+<div class="weui-cell">
+    <div class="weui-cell__bd">
+        <p>保单目前状态:</p>
+    </div>
+    <div class="weui-cell__ft" style="color: #ff0000;">待审核</div>
+</div>
+<div class="weui-cell">
+    <div class="weui-cell__bd">
+        <p>投保人:</p>
+    </div>
+    <div class="weui-cell__ft tover" style="width: 5.3rem">武汉市双视角保险理赔咨询有限公司</div>
+</div>
+<div class="weui-cell">
+    <div class="weui-cell__bd">
+        <p>被保险人:</p>
+    </div>
+    <div class="weui-cell__ft tover" style="width: 5.3rem">武汉市双视角保险理赔咨询有限公司</div>
+</div>
+<div class="weui-cell">
+    <div class="weui-cell__hd"><label class="weui-label">保单寄送地址:</label></div>
+    <div class="weui-cell__ft tover" style="width: 5.3rem">武汉市东西湖区七雄路海峡创业城二期二栋906</div>
+</div>
+<div class="pb50">
+    <div class="switch">
+        <div class="weui-cell switch-top">
+            <div class="weui-cell__bd">
+                <p>商铺档口1</p>
+            </div>
+            <div class="weui-cell__ft"><i class="icon"></i></div>
+        </div>
+        <div class="switch-box">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>投保方案：</p>
+                </div>
+                <div class="info_bar weui-cell__ft ">
+                    <p class="red">保险金额100万元</p>
+                    <p class="tip">（固定资产20万+临时存货80万）</p>
+                    <p class="red">附加商铺租金损失保险200元/天</p>
+                    <p class="tip">（最长90天）</p>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>档口地址：</p>
+                </div>
+                <div class="info_bar weui-cell__ft ">
+                    <p class="tip tover" style="width: 5.2rem">湖北省武汉市东西湖区五环大道XXX物流中心xx栋0015号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="switch">
+        <div class="weui-cell switch-top">
+            <div class="weui-cell__bd">
+                <p>商铺档口2</p>
+            </div>
+            <div class="weui-cell__ft"><i class="icon"></i></div>
+        </div>
+        <div class="switch-box">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>投保方案：</p>
+                </div>
+                <div class="info_bar weui-cell__ft ">
+                    <p class="red">保险金额100万元</p>
+                    <p class="tip">（固定资产20万+临时存货80万）</p>
+                    <p class="red">附加商铺租金损失保险200元/天</p>
+                    <p class="tip">（最长90天）</p>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>档口地址：</p>
+                </div>
+                <div class="info_bar weui-cell__ft ">
+                    <p class="tip tover" style="width: 5.2rem">湖北省武汉市东西湖区五环大道XXX物流中心xx栋0015号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="switch">
+        <div class="weui-cell switch-top">
+            <div class="weui-cell__bd">
+                <p>商铺档口3</p>
+            </div>
+            <div class="weui-cell__ft"><i class="icon"></i></div>
+        </div>
+        <div class="switch-box">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>投保方案：</p>
+                </div>
+                <div class="info_bar weui-cell__ft ">
+                    <p class="red">保险金额100万元</p>
+                    <p class="tip">（固定资产20万+临时存货80万）</p>
+                    <p class="red">附加商铺租金损失保险200元/天</p>
+                    <p class="tip">（最长90天）</p>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>档口地址：</p>
+                </div>
+                <div class="info_bar weui-cell__ft ">
+                    <p class="tip tover" style="width: 5.2rem">湖北省武汉市东西湖区五环大道XXX物流中心xx栋0015号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script>
+    $(function(){
+        $('.send_help_btn .weui-btn_primary').click(function(){
+            $('.weui-dialog,.weui-mask').show();
+        });
+        $('.weui-dialog__btn_primary').click(function(){
+            $('.weui-dialog,.weui-mask').hide();
+        });
+        //收起
+        $('.switch-top').click(function(){
+            $(this).find('.icon').toggleClass('on');
+            $(this).siblings('.switch-box').toggle();
+        });
+    })
+</script>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商铺保-协助信息上传</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script>
+        (function(){
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            html.style.fontSize = windowWidth / 7.5 + 'px';
+        })();
+    </script>
+    <link href="css/shops.css" rel="stylesheet" type="text/css">
+    <link href="css/weui.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="top_bar">
+        <span>填写协同信息</span>
+        <a class="return" href="javascript:;">返回</a>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <p>被保险人:</p>
+        </div>
+        <div class="weui-cell__ft tover" style="width: 5.3rem">武汉市双视角保险理赔咨询有限公司</div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <p>档口地址:</p>
+        </div>
+        <div class="weui-cell__ft tover" style="width: 5.3rem">武汉市东西湖区七雄路海峡创业城二期二栋906</div>
+    </div>
+    <div class="weui-cells__title">因武汉运达物流投保商铺档口保险需要，请协助拍摄并上传上述地址的以下类型照片：</div>
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <div class="weui-uploader">
+                <div class="weui-uploader__hd">
+                    <p class="weui-uploader__title">商铺正面照(至少一张)</p>
+                </div>
+                <div class="weui-uploader__bd">
+                    <ul class="weui-uploader__files">
+                        <li class="weui-uploader__file" style="background-image:url(./img/pic_160.png)"></li>
+                    </ul>
+                    <div class="weui-uploader__input-box">
+                        <input class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <div class="weui-uploader">
+                <div class="weui-uploader__hd">
+                    <p class="weui-uploader__title">商铺内部照(至少三张)</p>
+                </div>
+                <div class="weui-uploader__bd">
+                    <ul class="weui-uploader__files">
+                        <li class="weui-uploader__file" style="background-image:url(./img/pic_160.png)"></li>
+                    </ul>
+                    <div class="weui-uploader__input-box">
+                        <input class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cell" style="padding-bottom: 1rem;">
+        <div class="weui-cell__bd">
+            <div class="weui-uploader">
+                <div class="weui-uploader__hd">
+                    <p class="weui-uploader__title">消防设施照(至少二张)</p>
+                </div>
+                <div class="weui-uploader__bd">
+                    <ul class="weui-uploader__files">
+                        <li class="weui-uploader__file" style="background-image:url(./img/pic_160.png)"></li>
+                    </ul>
+                    <div class="weui-uploader__input-box">
+                        <input class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" send_help_btn">
+        <a href="javascript:;" class="weui-btn weui-btn_primary">确认完成</a>
+    </div>
+</body>
+</html>

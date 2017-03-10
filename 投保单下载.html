@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商铺保-投保单下载</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script>
+        (function(){
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            html.style.fontSize = windowWidth / 7.5 + 'px';
+        })();
+    </script>
+    <link href="css/shops.css" rel="stylesheet" type="text/css">
+    <link href="css/weui.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="top_bar">
+        <span>投保单下载</span>
+        <a class="return" href="javascript:;">返回</a>
+    </div>
+    <div class="switch">
+        <div class="weui-cells__title">根据您填写的投保信息，我们已为您生成专属投保单，有以下三种方式可获得投保单：</div>
+        <div class="weui-cells__title">1.将投保单发送至您的邮箱</div>
+        <div class="weui-cell">
+            <input class="weui-input" type="text" placeholder="请输入邮箱地址">
+        </div>
+        <div class="weui-cell">
+            <a href="javascript:;" class="weui-btn down_btn weui-btn_mini weui-btn_primary ">发送邮件</a>
+        </div>
+        <div class="weui-cells__title">2.直接下载到手机</div>
+        <div class="weui-cell">
+            <a href="javascript:;" class="weui-btn down_btn weui-btn_mini weui-btn_primary ">下载到手机</a>
+        </div>
+        <div class="weui-cells__title">3.投保单下载链接地址，您可以复制通过微信或QQ等工具发送到电脑端下载并打印。</div>
+        <div class="weui-cell">
+            <input class="weui-input" type="text" value="www.baidu.com">
+        </div>
+    </div>
+    <div class="weui-cells__tips" style="color: #ff0000">注：投保单是重要的保险资料，请务必认真阅读，充分了解您的保险权利与义务。如上述三种方式都无法获得投保单，请联系聚保服务热线：4008059680。</div>
+    <div class=" send_help_btn">
+        <a href="javascript:;" class="weui-btn weui-btn_primary">上传盖章后的投保单</a>
+    </div>
+</body>
+</html>

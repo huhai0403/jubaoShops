@@ -1,0 +1,53 @@
+/**
+ * Created by huhai on 2017/3/6.
+ */
+//
+//保单信息
+Mock.mock(
+    'api/policinfo.json',
+    {
+        insPerson:Mock.mock({
+            "array|1": [
+                "张三",
+                "李四",
+                "王五"
+            ]
+        }),
+        insedPerson:Mock.mock({
+            "array|1": [
+                "武汉第一物流",
+                "武汉第二物流",
+                "武汉第三物流"
+            ]
+        }),
+        operaPhone:Mock.mock({
+            'regexp': /^(0|86|17951)?(13[0-9]|15[012356789]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/
+        }),
+        comAddress:Mock.Random.county(true),
+        shopInfo:[//商铺信息
+            {
+                type:Mock.mock({
+                    "checked|1":[
+                        1,2,3
+                    ]
+                }),
+                address:Mock.Random.county(true),
+                pic01:Mock.Random.image(),
+                pic02:Mock.Random.image(),
+                pic03:Mock.Random.image(),
+            },
+            {
+                type:Mock.mock({
+                    "checked|1":[
+                        1,2,3
+                    ]
+                }),
+                address:Mock.Random.county(true),
+                pic01:Mock.Random.image(),
+                pic02:Mock.Random.image(),
+                pic03:Mock.Random.image(),
+            },
+        ],
+        companyPic:Mock.Random.image(),
+    }
+);
